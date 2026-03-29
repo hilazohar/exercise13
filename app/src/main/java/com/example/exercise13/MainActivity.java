@@ -20,20 +20,15 @@ import androidx.appcompat.app.AppCompatActivity;
  */
 public class MainActivity extends AppCompatActivity {
 
-    /**
-     * The main layout of the activity whose background color changes.
-     */
+    /** The main layout of the activity whose background color changes. */
     LinearLayout m;
 
-    /**
-     * The radio buttons for color selection.
-     */
+    /** The radio buttons for color selection. */
     RadioButton rB1, rB2, rB3, rB4;
 
-    /**
-     * The switch that toggles between immediate and button-click changes.
-     */
+    /** The switch that toggles between immediate and button-click changes. */
     Switch sW;
+
 
 
     @Override
@@ -52,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
         m.setBackgroundColor(Color.GRAY);
     }
 
-
     /**
      * Handles the click event on any RadioButton.
      * Changes the background color immediately if the Switch is checked.
@@ -64,15 +58,43 @@ public class MainActivity extends AppCompatActivity {
 
             if (view.getId() == R.id.rB1) {
                 m.setBackgroundColor(Color.RED);
-            } else if (view.getId() == R.id.rB2) {
+            }
+            else if (view.getId() == R.id.rB2) {
                 m.setBackgroundColor(Color.BLUE);
-            } else if (view.getId() == R.id.rB3) {
+            }
+            else if (view.getId() == R.id.rB3) {
                 m.setBackgroundColor(Color.GREEN);
-            } else if (view.getId() == R.id.rB4) {
+            }
+            else if (view.getId() == R.id.rB4) {
                 m.setBackgroundColor(Color.YELLOW);
             }
 
         }
+    }
 
+    /**
+     * Handles the click event on the Change button.
+     * Changes the background color based on the selected RadioButton
+     * if the Switch is not checked.
+     *
+     * @param view The Button that was clicked.
+     */
+    public void clicked(View view) {
+        if (sW.isChecked() == false) {
+
+            if (rB1.isChecked() == true) {
+                m.setBackgroundColor(Color.RED);
+            }
+            else if (rB2.isChecked() == true) {
+                m.setBackgroundColor(Color.BLUE);
+            }
+            else if (rB3.isChecked() == true) {
+                m.setBackgroundColor(Color.GREEN);
+            }
+            else if (rB4.isChecked() == true) {
+                m.setBackgroundColor(Color.YELLOW);
+            }
+
+        }
     }
 }
