@@ -52,4 +52,27 @@ public class MainActivity extends AppCompatActivity {
         m.setBackgroundColor(Color.GRAY);
     }
 
+
+    /**
+     * Handles the click event on any RadioButton.
+     * Changes the background color immediately if the Switch is checked.
+     *
+     * @param view The RadioButton that was clicked.
+     */
+    public void onRadioButtonClicked(View view) {
+        if (sW.isChecked() == true) {
+
+            if (view.getId() == R.id.rB1) {
+                m.setBackgroundColor(Color.RED);
+            } else if (view.getId() == R.id.rB2) {
+                m.setBackgroundColor(Color.BLUE);
+            } else if (view.getId() == R.id.rB3) {
+                m.setBackgroundColor(Color.GREEN);
+            } else if (view.getId() == R.id.rB4) {
+                m.setBackgroundColor(Color.YELLOW);
+            }
+
+        }
+
+    }
 }
